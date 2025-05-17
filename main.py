@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request,redirect,url_for,flash
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
+import os
 from sqlalchemy import Integer, String
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
@@ -9,7 +11,10 @@ from flask_login import UserMixin,login_user,login_required,current_user,logout_
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
-app.config["SECRET_KEY"]="heyitsme"
+
+load_dotenv()
+secret_key = os.getenv('SECRET_KEY')
+app.config["SECRET_KEY"]=secret_key
 
 login_manager = LoginManager()
 login_manager.init_app(app)
