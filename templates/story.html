@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    li {
+  background-color: coral;
+  width: 600px;
+  height: 600px;
+  border: 1px solid;
+  overflow: auto;
+  display: block
+}
+</style>
+</head>
+<body>
+<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <ul class="nav nav-pills">
+       <li class="nav-item">
+      <a class="nav-link" href="{{url_for('register')}}">Register</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url_for('login')}}">Login</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+    </li>
+         <li class="nav-item">
+      <a class="nav-link" href="{{url_for('home')}}">Home</a>
+    </li>
+
+  </ul>
+</nav>
+<div class="row">
+    <ul>
+    <li>{{ story }}</li><br>
+    </ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <ul class="nav nav-pills">
+       <li class="nav-item">
+      <a class="nav-link" href="{{url_for('register')}}">Register</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url_for('login')}}">Login</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+    </li>
+         <li class="nav-item">
+      <a class="nav-link" href="{{url_for('home')}}">Home</a>
+    </li>
+
+  </ul>
+</nav>
+<h1>Hey Welcome {{ name }} </h1>
+<h3>Your story</h3>
+<form action="{{url_for('story')}} " method="post">
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <div class="box" style="position:relative; height: 600px; width: 500px;">
+        <textarea name="story" class="story" id="exampleFormControlTextarea1" rows="10" placeholder="Message">
+
+        </textarea>
+        <br><input type="submit" class="btn btn-primary" value="Save">
+
+
+    </div>
+
+</div>
+</form>
+</body>
+</html>
